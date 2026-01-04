@@ -51,9 +51,9 @@ MULTIPLE_DB = is_enabled(os.environ.get('MULTIPLE_DB', "True"), True) # Type Tru
 DATABASE_URI2 = environ.get('DATABASE_URI2', "mongodb+srv://video:video@rishi.fzpls33.mongodb.net/?retryWrites=true&w=majority")
 DB_CHANGE_LIMIT = int(environ.get('DB_CHANGE_LIMIT', "432")) 
 
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Moviekoodu2')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Moviekoodu2')
-OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/JAsuran1234_bot')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/jsupportgroups')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/jsupportgroups')
+OWNER_LNK = environ.get('OWNER_LNK', 'https://t.me/JAsuran123_bot')
 UPDATE_CHANNEL_LNK = environ.get('UPDATE_CHANNEL_LNK', 'https://t.me/Moviekoodu2')
 
 AUTH_CHANNEL = environ.get("AUTH_CHANNEL", "-1002092476960") # add multiple channels here, separated by single space
@@ -128,9 +128,10 @@ if 'DYNO' in environ:
     APP_NAME = environ.get('APP_NAME')
 else:
     ON_HEROKU = False
-BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
-FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
-URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else "https://{}/".format(FQDN, PORT)
+URL = environ.get("URL", "https://persistent-candace-dappa-1a990cfb.koyeb.app/")
+#BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
+#FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
+#URL = "https://{}/".format(FQDN) if ON_HEROKU or NO_PORT else "https://{}/".format(FQDN, PORT)
 SLEEP_THRESHOLD = int(environ.get('SLEEP_THRESHOLD', '60'))
 WORKERS = int(environ.get('WORKERS', '4'))
 SESSION_NAME = str(environ.get('SESSION_NAME', 'SilentXBotz'))
